@@ -6,10 +6,18 @@
     "build": "vite build"
   },
   "dependencies": {
-    "vue": "^3.0.0-beta.15"
+    "@vercel/node": "^1.7.1",
+    "axios": "^0.19.2",
+    "bulma": "^0.9.0",
+    "highlight.js": "^10.1.1",
+    "normalize.css": "^8.0.1",
+    "vue": "^3.0.0-beta.15",
+    "vue-router": "^4.0.0-beta.1"
   },
   "devDependencies": {
-    "vite": "^1.0.0-beta.3",
-    "@vue/compiler-sfc": "^3.0.0-beta.15"
+    "@vue/compiler-sfc": "^3.0.0-beta.15",
+    "faunadb": "^2.14.2",
+    "sass": "^1.26.9",
+    "vite": "^1.0.0-beta.3"
   }
 }
