@@ -61,12 +61,11 @@ export default {
 function useForm(router: Router) {
   const data = reactive({ syntax: '', content: '', author: 'anonymous' });
   const submit = async () => {
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6Lc7baMZAAAAAKJPeJHW7XdZXP_q77WcC5BhRONQ', {action: 'paste'}).then(async function(token) {
-        const res = await axios.post('/api/paste', {...data, token})
-        const id = res.data.id;
-        router.push({name: 'show', params: {id}})
-      });
+    grecaptcha.ready(async function() {
+      const token = await grecaptcha.execute('6Lc7baMZAAAAAKJPeJHW7XdZXP_q77WcC5BhRONQ', {action: 'paste'});
+      const res = await axios.post('/api/paste', {...data, token})
+      const id = res.data.id;
+      router.push({name: 'show', params: {id}})
     });
   }
   return { data , submit }

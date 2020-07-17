@@ -20,6 +20,20 @@ export default async (req: NowRequest, res: NowResponse) => {
       q.Collection("posts"),
       { data: { author, syntax, content } }
     ))
-  const id = ret.ref.id;
+  const id = from10to58(ret.ref.id);
   res.json({ id });
+}
+
+// base10 to base58
+function from10to58(id: string) : string {
+  const chars = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+  const radix = BigInt(chars.length);
+  let num = BigInt(id);
+  let ret = '';
+  do {
+    const mod = Number(num % radix);
+    num /= radix;
+    ret = chars[mod] + ret;
+  } while (num)
+  return ret;
 }

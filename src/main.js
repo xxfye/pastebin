@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import { createWebHistory, createRouter } from "vue-router";
 import App from './App.vue'
 import 'bulma/bulma.sass'
-import './index.css'
 import 'highlight.js/styles/tomorrow.css'
+import './index.css'
 
 import Paste from "./components/Paste.vue";
 import Show from "./components/Show.vue";
@@ -18,7 +18,7 @@ const router = createRouter({
     },
     {
       name: 'show',
-      path: '/r/:id',
+      path: '/p/:id',
       component: Show
     }
   ]
