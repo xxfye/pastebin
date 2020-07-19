@@ -9,12 +9,12 @@
     "axios": "^0.19.2",
     "bulma": "^0.9.0",
     "highlight.js": "^10.1.1",
-    "vue": "^3.0.0-beta.24",
+    "vue": "^3.0.0-rc.1",
     "vue-router": "^4.0.0-beta.2"
   },
   "devDependencies": {
     "@vercel/node": "^1.7.2",
-    "@vue/compiler-sfc": "^3.0.0-beta.24",
+    "@vue/compiler-sfc": "^3.0.0-rc.1",
     "faunadb": "^2.14.2",
     "sass": "^1.26.10",
     "vite": "^1.0.0-rc.1"
