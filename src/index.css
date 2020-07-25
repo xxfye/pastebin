@@ -9,5 +9,10 @@
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@1.0.6/web/woff2/JetBrainsMono-Regular.woff2") format("woff2");
+  font-display: swap;
+  /*src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format("woff2");*/
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/eot/JetBrainsMono-Regular.eot') format('embedded-opentype'),
+      url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff'),
+      url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf') format('truetype');
 }
