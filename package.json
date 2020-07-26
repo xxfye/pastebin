@@ -13,7 +13,7 @@
     "vue-router": "^4.0.0-beta.2"
   },
   "devDependencies": {
-    "@vercel/node": "^1.7.2",
+    "@vercel/node": "^1.7.3",
     "@vue/compiler-sfc": "^3.0.0-rc.2",
     "faunadb": "^2.14.2",
     "sass": "^1.26.10",
