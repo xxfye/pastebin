@@ -1,14 +1,5 @@
 <template>
-  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
-    <section class="container">
-      <div class="navbar-brand ">
-        <a class="navbar-item" href="/">
-          <img src="./assets/logo.png">
-        </a>
-        <a class="navbar-item" href="/">+Paste</a>
-      </div>
-    </section>
-  </nav>
+  <Header></Header>
 
   <br>
   <section class="container is-fluid">
@@ -17,7 +8,12 @@
 </template>
 
 <script lang="ts">
+import Header from "./components/Header.vue";
+
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    Header
+  }
 }
 </script>
