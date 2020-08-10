@@ -10,14 +10,14 @@
     "axios": "^0.19.2",
     "bulma": "^0.9.0",
     "highlight.js": "^10.1.2",
-    "vue": "^3.0.0-rc.4",
-    "vue-router": "^4.0.0-beta.4"
+    "vue": "^3.0.0-rc.5",
+    "vue-router": "^4.0.0-beta.6"
   },
   "devDependencies": {
-    "@vercel/node": "^1.7.3",
-    "@vue/compiler-sfc": "^3.0.0-rc.4",
+    "@vercel/node": "^1.7.4",
+    "@vue/compiler-sfc": "^3.0.0-rc.5",
     "faunadb": "^2.14.2",
     "sass": "^1.26.10",
-    "vite": "^1.0.0-rc.3"
+    "vite": "^1.0.0-rc.4"
   }
 }
