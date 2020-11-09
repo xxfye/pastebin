@@ -3,21 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "start": "npx now dev",
+    "start": "npx vercel dev",
     "build": "vite build"
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "bulma": "^0.9.0",
-    "highlight.js": "^10.1.2",
-    "vue": "^3.0.0-rc.5",
-    "vue-router": "^4.0.0-beta.6"
+    "bulma": "^0.9.1",
+    "highlight.js": "^10.2.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-beta.13"
   },
   "devDependencies": {
-    "@vercel/node": "^1.7.4",
-    "@vue/compiler-sfc": "^3.0.0-rc.5",
+    "@vercel/node": "^1.8.4",
+    "@vue/compiler-sfc": "^3.0.0",
     "faunadb": "^2.14.2",
-    "sass": "^1.26.10",
+    "sass": "^1.27.0",
     "vite": "^1.0.0-rc.4"
   }
 }

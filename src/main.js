@@ -1,8 +1,7 @@
 import { createApp } from 'vue'
-import { createWebHistory, createRouter } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import App from './App.vue'
 import 'bulma/bulma.sass'
-import 'highlight.js/styles/tomorrow.css'
 import './index.css'
 
 import Paste from "./components/Paste.vue";

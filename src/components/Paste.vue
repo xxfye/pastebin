@@ -25,8 +25,7 @@
         <div class="control">
           <div class="select">
             <select v-model="data.syntax">
-              <option selected value="">Auto</option>
-              <option v-for="lang in langs" :value="lang">{{ lang }}</option>
+              <option v-for="lang in langs">{{ lang }}</option>
             </select>
           </div>
         </div>
@@ -44,36 +43,33 @@
 
 <script lang="ts">
 import axios from 'axios';
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import { Router, useRouter } from "vue-router";
+import hljs from 'highlight.js'
 
 export default {
   name: 'Paste',
   setup() {
     const router = useRouter();
-    const { data, submit } = useForm(router);
+    const { data, submit } = usePaste(router)
+    const langs = hljs.listLanguages();
     return {
       data, submit, langs
     }
   }
 }
 
-function useForm(router: Router) {
-  const data = reactive({ syntax: '', content: '', author: 'anonymous' });
+function usePaste(router: Router) {
+  const data = reactive({ syntax: 'plaintext', content: '', author: 'anonymous' });
+
   const submit = async () => {
-    grecaptcha.ready(async function() {
-      const token = await grecaptcha.execute('6Lc7baMZAAAAAKJPeJHW7XdZXP_q77WcC5BhRONQ', {action: 'paste'});
-      const res = await axios.post('/api/paste', {...data, token})
+    axios.post('/api/paste', {...data }).then(res => {
       const id = res.data.id;
       router.push({name: 'show', params: {id}})
-    });
+    })
   }
   return { data , submit }
 }
-
-const langs = ["python", "xml", "javascript", "http", "c-like", "cpp", "sql", "clojure", "csharp", "objectivec", "java",
-  "swift", "css", "ruby", "makefile", "go", "coffeescript", "bash", "ini", "rust", "handlebars", "prolog", "typescript",
-  "elm", "json"]
 </script>
 <style scoped>
 textarea {
