@@ -43,7 +43,7 @@
 
 <script lang="ts">
 import axios from 'axios';
-import { reactive } from 'vue'
+import { reactive, watch, toRefs } from 'vue'
 import { Router, useRouter } from "vue-router";
 import hljs from 'highlight.js'
 
@@ -61,13 +61,17 @@ export default {
 
 function usePaste(router: Router) {
   const data = reactive({ syntax: 'plaintext', content: '', author: 'anonymous' });
-
   const submit = async () => {
     axios.post('/api/paste', {...data }).then(res => {
       const id = res.data.id;
       router.push({name: 'show', params: {id}})
     })
   }
+
+  watch(toRefs(data).content, ()=> {
+    data.syntax = hljs.highlightAuto(data.content, hljs.listLanguages()).language ?? 'plaintext';
+  })
+
   return { data , submit }
 }
 </script>
